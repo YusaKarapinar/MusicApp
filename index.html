@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music App</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Harici bir CSS dosyası eklemek için -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome için -->
+</head>
+<body>
+    <!-- Yan Menü -->
+    <div id="sidebar">
+        <button id="close-btn">X</button>
+        <ul>
+            <li><a href="#">Ana Sayfa</a></li>
+            <li><a href="#">Müzikler</a></li>
+            <li><a href="#">Ayarlar</a></li>
+        </ul>
+    </div>
+
+    <!-- Müzik Çalar -->
+    <div id="music-bar">
+        <!-- Müzik kontrol butonları -->
+        <div class="music-control-buttons">
+            <button id="prev-btn"><i class="fas fa-backward"></i></button> <!-- Geri Butonu -->
+            <button id="play-btn"><i class="fas fa-play"></i></button> <!-- Başlat/Duraklat Butonu -->
+            <button id="next-btn"><i class="fas fa-forward"></i></button> <!-- İleri Butonu -->
+        </div>
+        
+        <!-- Zaman Çubuğu (Progress Bar) -->
+        <div id="progress-container">
+            <input type="range" id="progress-bar" value="0" step="1" min="0" max="100" />
+        </div>
+        
+        <audio id="audio-player">
+            <source src="music/Soft and Wet.mp3" type="audio/mp3">
+            Tarayıcınız audio etiketini desteklemiyor.
+        </audio>
+    </div>
+
+    <!-- Menü Butonu -->
+    <button id="menu-btn"><i class="fas fa-bars"></i> Menü</button>
+
+    <!-- JavaScript Dosyasını Burada Dahil Ediyoruz -->
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* Temel stil ayarları */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header (Başlık) Stili */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Üst kısımda hafif bir gölge */
+}
+
+/* Sidebar (Sol Menü) */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Başlangıçta menü gizli */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 8px 16px;
+}
+
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+/* Sidebar Kapatma Butonu */
+#close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Menü Butonu */
+#menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Müzik Barı */
+#music-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a; /* Koyu arka plan rengi */
+    color: #f0f0f0; /* Yazı rengi */
+    padding: 20px 0; /* Üst ve alt boşluk */
+    z-index: 1000; /* Z-index ile önde görünmesini sağla */
+    display: flex;
+    justify-content: space-between; /* Butonlar ve progress bar'ı birbirinden ayır */
+    align-items: center;
+}
+
+/* Müzik Kontrol Butonları */
+.music-control-buttons {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px; /* Sol tarafa yaslanması */
+}
+
+.music-control-buttons button {
+    background-color: #444;
+    border: none;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 18px;
+}
+
+.music-control-buttons button:hover {
+    background-color: #555;
+}
+
+/* Progress Bar */
+#progress-container {
+    width: 70%; /* Progress bar için uygun genişlik */
+    padding-right: 20px; /* Sağda biraz boşluk bırak */
+}
+
+#progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #444;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#progress-bar::-webkit-slider-runnable-track {
+    background: #ccc;
+    border-radius: 5px;
+    height: 10px;
+}
+
+#progress-bar::-webkit-slider-thumb {
+    background: #f0f0f0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+}
+
+/* Responsive Ayarları */
+@media screen and (max-width: 768px) {
+    #music-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+}
