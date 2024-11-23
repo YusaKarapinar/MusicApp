@@ -7,15 +7,6 @@ body {
     color: #333;
 }
 
-/* Header (Başlık) Stili */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Üst kısımda hafif bir gölge */
-}
-
 /* Sidebar (Sol Menü) */
 #sidebar {
     position: fixed;
@@ -93,7 +84,7 @@ header {
 .music-control-buttons {
     display: flex;
     gap: 15px;
-    margin-left: 20px; /* Sol tarafa yaslanması */
+    margin-left: 20px;
 }
 
 .music-control-buttons button {
