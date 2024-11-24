@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şarkılarım</title>
+
+    <!-- CSS Dosyaları -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/songs-selection.css">
+    <link rel="stylesheet" href="css/songs.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/music-player.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Yan Menü -->
+    <div id="sidebar" class="sidebar">
+        <button id="close-btn" class="close-btn"><i class="fas fa-times"></i></button>
+        <div class="sidebar-header">
+            <h2>Menü</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html">Anasayfa</a></li>
+            <li><a href="songs.html">Şarkılarım</a></li>
+            <li><a href="#calma-listeleri">Çalma Listeleri</a></li>
+            <li><a href="#hakkimda">Hakkımda</a></li>
+        </ul>
+    </div>
+
+    <!-- Menü Butonu -->
+    <button id="menu-btn" class="menu-btn"><i class="fas fa-bars"></i></button>
+
+    <!-- Şarkılarım Bölümü -->
+    <section id="sarkilarim" class="songs-section">
+        <h1>Şarkılarım</h1>
+        <ul id="songs-list" class="songs-list">
+            <!-- Dinamik olarak şarkılar buraya eklenecek -->
+        </ul>
+    </section>
+
+    <!-- Müzik Çalar -->
+    <div id="music-bar">
+        <div class="music-control-buttons">
+            <button id="prev-btn"><i class="fas fa-backward"></i></button>
+            <button id="play-btn"><i class="fas fa-play"></i></button>
+            <button id="next-btn"><i class="fas fa-forward"></i></button>
+        </div>
+        <div id="progress-container">
+            <input type="range" id="progress-bar" value="0" step="1" min="0" max="100" />
+        </div>
+    </div>
+
+    <!-- Audio Player -->
+    <audio id="audio-player"></audio>
+
+    <!-- JavaScript -->
+    <script src="js/songs.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

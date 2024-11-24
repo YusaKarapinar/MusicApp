@@ -1,0 +1,93 @@
+/* Genel Ayarlar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Yan Menü */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Menü başlangıçta gizli */
+    width: 250px;
+    height: 100%;
+    background-color: #1a1a1a; /* Koyu arka plan */
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Gölge efekti */
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out; /* Açma/Kapama animasyonu */
+    z-index: 1000;
+}
+
+.sidebar.open {
+    left: 0; /* Menü açıldığında */
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+    background-color: #007bff; /* Mavi başlık alanı */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    border-bottom: 1px solid #444; /* Menü elemanları arası çizgi */
+}
+
+.sidebar-menu li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-menu li a:hover {
+    background-color: #007bff; /* Hover durumunda mavi arka plan */
+    color: white;
+}
+
+/* Kapatma Butonu */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #007bff;
+}
+
+/* Menü Açma Butonu */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 2000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.menu-btn:hover {
+    background-color: #0056b3;
+}

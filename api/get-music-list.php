@@ -1,30 +1,32 @@
 <?php
+// Hata raporlamayı aç
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// Müzik dosyalarının bulunduğu klasör
-$musicFolder = 'C:\xampp\htdocs\MusicApp\music'; 
+// JSON içerik tipi
+header('Content-Type: application/json');
 
-// Klasörün var olup olmadığını kontrol et
+// Müzik dosyalarının bulunduğu klasör
+$musicFolder =  'C:\xampp\htdocs\MusicApp\music';
+
+// Klasörün varlığını kontrol et
 if (!is_dir($musicFolder)) {
     echo json_encode(['error' => 'Müzik klasörü bulunamadı.']);
     exit;
 }
 
-// Klasördeki dosyaları oku
-$files = scandir($musicFolder);
+// Klasördeki MP3 dosyalarını filtrele
+$files = array_filter(scandir($musicFolder), function($file) use ($musicFolder) {
+    $filePath = $musicFolder . DIRECTORY_SEPARATOR . $file;
+    return is_file($filePath) && pathinfo($file, PATHINFO_EXTENSION) === 'mp3';
+});
 
-// Eğer dizinde dosya yoksa, bir hata mesajı döndür
-if ($files === false) {
-    echo json_encode(['error' => 'Dosyalar okunamadı.']);
+// Eğer dosya yoksa hata döndür
+if (empty($files)) {
+    echo json_encode(['error' => 'Klasörde MP3 dosyası bulunamadı.']);
     exit;
 }
 
-// MP3 dosyalarını filtrele
-$mp3Files = array_filter($files, function($file) {
-    return pathinfo($file, PATHINFO_EXTENSION) === 'mp3';
-});
-
-// MP3 dosyalarını döndür
-echo json_encode(array_values($mp3Files)); // array_values() diziyi sıfırdan indeksler
+// JSON formatında dosya listesini döndür
+echo json_encode(['files' => array_values($files)]);
 ?>

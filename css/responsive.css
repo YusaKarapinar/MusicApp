@@ -1,0 +1,16 @@
+/* Responsive Ayarları */
+@media screen and (max-width: 768px) {
+    #music-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-container {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #search-box {
+        width: 70%;
+    }
+}
